@@ -1,30 +1,37 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Ball : MonoBehaviour {
 
 	public Vector2 startForce;
-
-	public GameObject nextBall;
-
 	public Rigidbody2D rb;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		rb.AddForce(startForce, ForceMode2D.Impulse);
 	}
 
-	public void Split ()
+	void OnCollisionEnter2D (Collision2D col)
 	{
-		if (nextBall != null)
+		if (col.collider.tag == "Player")
 		{
-			GameObject ball1 = Instantiate(nextBall, rb.position + Vector2.right / 4f, Quaternion.identity);
-			GameObject ball2 = Instantiate(nextBall, rb.position + Vector2.left / 4f, Quaternion.identity);
-
-			ball1.GetComponent<Ball>().startForce = new Vector2(2f, 5f);
-			ball2.GetComponent<Ball>().startForce = new Vector2(-2f, 5f);
+			//Debug.Log("GAME OVER!");
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		}
-
-		Destroy(gameObject);
 	}
 
+
+	void OnTriggerEnter2D(Collider2D other) 
+	{
+		if (other.GetComponent<Collider2D>().tag == "Hole")
+		{
+			//Debug.Log("GAME OVER!");
+			//SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			Destroy(this.gameObject);
+		}
+	}
 }
+
+
