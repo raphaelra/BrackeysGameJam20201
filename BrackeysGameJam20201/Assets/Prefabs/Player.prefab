@@ -145,3 +145,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   rb: {fileID: 7684397222543530258}
+  holePrefab: {fileID: 830390013052090755, guid: e727ab7d8d03449888735ffa6d8e94f9,
+    type: 3}
