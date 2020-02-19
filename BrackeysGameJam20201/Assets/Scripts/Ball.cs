@@ -10,6 +10,7 @@ public class Ball : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		startForce = new Vector2(Random.Range(-2f, 2f), Random.Range(2.0f, 2.0f));
 		rb.AddForce(startForce, ForceMode2D.Impulse);
 	}
 
@@ -29,9 +30,13 @@ public class Ball : MonoBehaviour {
 		{
 			//Debug.Log("GAME OVER!");
 			//SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			//Manager.BallsToSpawn--;
+			       // Debug.Log(Manager.BallsToSpawn);
+
 			Destroy(this.gameObject);
 		}
 	}
+
 }
 
 
