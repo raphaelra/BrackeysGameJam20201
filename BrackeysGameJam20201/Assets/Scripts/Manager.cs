@@ -80,7 +80,11 @@ public class Manager : MonoBehaviour
     {
         Lives--;
         if (Manager.Lives < 0)
+        {
+            Lives = 3;
+            Level = 1;
             SceneManager.LoadScene(2);
+        }
         else
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

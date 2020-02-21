@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -705,7 +705,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 6.84
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -848,6 +848,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 939769293920391712, guid: f5795911306904b13a99c948da8fccb3,
+        type: 3}
+      propertyPath: speed
+      value: 6.13
       objectReference: {fileID: 0}
     - target: {fileID: 2981843216873904332, guid: f5795911306904b13a99c948da8fccb3,
         type: 3}
