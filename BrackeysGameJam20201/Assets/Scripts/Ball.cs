@@ -10,7 +10,7 @@ public class Ball : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		startForce = new Vector2(Random.Range(-4f, 4f), Random.Range(2.0f, 3.5f));
+		startForce = new Vector2(Random.Range(-6f, -1f), Random.Range(3.0f, 5.5f));
 		rb.AddForce(startForce, ForceMode2D.Impulse);
 	}
 
@@ -18,8 +18,7 @@ public class Ball : MonoBehaviour {
 	{
 		if (col.collider.tag == "Player")
 		{
-			//Debug.Log("GAME OVER!");
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			Manager.LoseLife();
 		}
 	}
 

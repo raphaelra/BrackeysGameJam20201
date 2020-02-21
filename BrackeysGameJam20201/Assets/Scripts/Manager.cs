@@ -6,26 +6,31 @@ using UnityEngine.UI;
 
 public class Manager : MonoBehaviour
 {
+    public static int Lives = 3;
     public static int BallsToSpawn;
     public static int Level = 1;
     private int LiveBalls;
     public GameObject BallPrefabs;
     public Transform SpawnPoint;
     public Text LevelText;
+    public GameObject[] LifeIcons;
 
 
-    // Start is called before the first frame update
     void Start()
     {
-        LevelText.text = "Level: " + Level; 
+        UpdateLevelText();
+        UpdateLives();
         StartLevel();
     }
-    // Update is called once per frame
+
+    void UpdateLevelText()
+    {
+        LevelText.text = "Level: " + Level;
+    }
 
     void StartLevel()
     {
         BallsToSpawn = Random.Range(Level, Level + 2);
-        //Debug.Log(BallsToSpawn);
         for (int i = 0; i < BallsToSpawn; i++)
         {
             Instantiate(BallPrefabs, SpawnPoint.position, Quaternion.identity);
@@ -41,4 +46,42 @@ public class Manager : MonoBehaviour
         }
 	}
 
+
+    void UpdateLives()
+    {
+        if (Lives == 3)
+        {
+            LifeIcons[0].SetActive(true);
+            LifeIcons[1].SetActive(true);
+            LifeIcons[2].SetActive(true);
+        }
+        if (Lives == 2)
+        {
+            LifeIcons[0].SetActive(true);
+            LifeIcons[1].SetActive(true);
+            LifeIcons[2].SetActive(false);
+        }
+        if (Lives == 1)
+        {
+            LifeIcons[0].SetActive(true);
+            LifeIcons[1].SetActive(false);
+            LifeIcons[2].SetActive(false);
+        }
+        if (Lives == 0)
+        {
+            LifeIcons[0].SetActive(false);
+            LifeIcons[1].SetActive(false);
+            LifeIcons[2].SetActive(false);
+        }
+
+    }
+
+    public static void LoseLife()
+    {
+        Lives--;
+        if (Manager.Lives < 0)
+            SceneManager.LoadScene(2);
+        else
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
