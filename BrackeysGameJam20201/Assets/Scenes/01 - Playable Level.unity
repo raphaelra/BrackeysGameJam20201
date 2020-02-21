@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -417,7 +417,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 96.6}
+  m_AnchoredPosition: {x: -264, y: -198.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &611621794
@@ -440,7 +440,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 98
+    m_FontSize: 53
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -658,8 +658,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 867655214}
-  - component: {fileID: 867655216}
   - component: {fileID: 867655215}
+  - component: {fileID: 867655216}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -710,6 +710,7 @@ MonoBehaviour:
   BallPrefabs: {fileID: 5952289684942917428, guid: 6414251b08475476f9cf6a79e15b59e0,
     type: 3}
   SpawnPoint: {fileID: 20690278}
+  LevelText: {fileID: 611621794}
 --- !u!1001 &996690967
 PrefabInstance:
   m_ObjectHideFlags: 0
