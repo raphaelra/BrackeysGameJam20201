@@ -18,5 +18,30 @@ public class Hole : MonoBehaviour
             Player.IsThereHole = false;
             Destroy(this.gameObject);
         }
+
+        if(Input.touchCount > 0)
+         {
+               Touch touch = Input.GetTouch(0);
+
+              switch(touch.phase)
+              {
+                    case TouchPhase.Began:
+                        Player.IsThereHole = false;
+                        Destroy(this.gameObject);
+                        break;
+
+                    case TouchPhase.Moved:
+                        // Determine direction by comparing the current touch position with the initial one
+                        break;
+
+                    case TouchPhase.Ended:
+                        // Report that the touch has ended when it ends
+                        break;
+                }
+
     }
 }
+}
+
+
+ 
