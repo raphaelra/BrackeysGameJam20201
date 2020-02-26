@@ -10,7 +10,7 @@ public class Ball : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		startForce = new Vector2(Random.Range(-11f, -3f), Random.Range(5.0f, 12f));
+		startForce = new Vector2(Random.Range(-11f, -5f), Random.Range(8.0f, 18f));
 		rb.AddForce(startForce, ForceMode2D.Impulse);
 	}
 
