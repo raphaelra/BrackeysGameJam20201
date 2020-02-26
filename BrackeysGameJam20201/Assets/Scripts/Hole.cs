@@ -15,7 +15,7 @@ public class Hole : MonoBehaviour
     {
         if(Input.GetKeyDown("space"))
         {
-            Player.IsThereHole = false;
+            //Player.IsThereHole = false;
             Destroy(this.gameObject);
         }
 
@@ -26,7 +26,7 @@ public class Hole : MonoBehaviour
               switch(touch.phase)
               {
                     case TouchPhase.Began:
-                        Player.IsThereHole = false;
+                        //Player.IsThereHole = false;
                         Destroy(this.gameObject);
                         break;
 

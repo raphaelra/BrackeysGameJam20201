@@ -25,15 +25,15 @@ public class Player : MonoBehaviour
 	void Update () {
 
 
-		if(Input.GetKeyDown("space") && !IsThereHole)
+		if(Input.GetKeyDown("space"))
 		{
 			PlayerFeet = this.transform.position - new Vector3(0f,HoleOffset,0f);
 			//Debug.Log(HoleSpawner.position);
 			Instantiate(holePrefab, PlayerFeet, Quaternion.identity);
-			IsThereHole = true;
+			//IsThereHole = true;
 		}
 
-		 if(Input.touchCount > 0 && !IsThereHole)
+		 if(Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
 
@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
                     //Debug.Log("no touchy");
 					PlayerFeet = this.transform.position - new Vector3(0f,HoleOffset,0f);
 					Instantiate(holePrefab, PlayerFeet, Quaternion.identity);
-					IsThereHole = true;
+					//IsThereHole = true;
                     break;
 
                 case TouchPhase.Moved:
