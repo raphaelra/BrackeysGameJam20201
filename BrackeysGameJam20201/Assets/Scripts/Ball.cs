@@ -4,13 +4,18 @@ using UnityEngine.SceneManagement;
 
 public class Ball : MonoBehaviour {
 
-	public Vector2 startForce;
+	private Vector2 startForce;
 	public Rigidbody2D rb;
+
+	public float MinXForce = 5;
+	public float MaxXForce = 11;
+	public float MinYForce = 8;
+	public float MaxyForce = 18;
 
 	// Use this for initialization
 	void Start () 
 	{
-		startForce = new Vector2(Random.Range(-11f, -5f), Random.Range(8.0f, 18f));
+		startForce = new Vector2(Random.Range(-MaxXForce, -MinXForce), Random.Range(MinYForce, MaxyForce));
 		rb.AddForce(startForce, ForceMode2D.Impulse);
 	}
 
